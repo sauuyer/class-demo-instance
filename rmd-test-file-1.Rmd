@@ -1,6 +1,10 @@
 ---
-title: "rmd-test-file-1"
-output: html_document
+title: "This is the title"
+knit: (function(input_file, encoding) {
+  out_dir <- 'docs';
+  rmarkdown::render(input_file,
+ encoding=encoding,
+ output_file=file.path(dirname(input_file), out_dir, 'index.html'))})
 ---
 
 ```{r setup, include=FALSE}
