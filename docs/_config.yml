@@ -1,7 +1,7 @@
 name: "test name - r class thingy"
 output_dir: "docs"
 navbar:
-  title: "test title - thingy"
+  title: "title"
   left:
   - text: "Left Welcome!"
    href: index.html
