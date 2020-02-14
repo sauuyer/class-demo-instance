@@ -31,7 +31,7 @@ You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
 df <- data.frame(
-  variable_name,
+  list_of_strings,
   numerical_list,
   list_of_booleans
 )
