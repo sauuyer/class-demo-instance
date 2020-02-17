@@ -1,5 +1,5 @@
 ---
-title: "This is the title"
+title: "Intro to R for Seurat"
 knit: (function(input_file, encoding) {
   out_dir <- 'docs';
   rmarkdown::render(input_file,
@@ -9,6 +9,28 @@ knit: (function(input_file, encoding) {
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Installing packages in r
+
+Installation of R Packages takes place within R using R scripts. The syntax for installing packages is as follows:
+
+  install.packages("package_name")
+
+Packages are installed once per the computer you are using, though if you need to update a package, you would want to rerun install.packages().
+
+After packages are installed (once per machine), packages need to be loaded into your project everytime a project's global environment has been reset. Packages are loaded using the library function:
+
+  library(package_name)
+
+```{r}
+# install and load the seurat package
+install.packages('Seurat', repos = "http://cran.us.r-project.org")
+library(Seurat)
+
+# install and load the dpylr package
+install.packages("dplyr", repos = "http://cran.us.r-project.org")
+library(dplyr)
 ```
 
 ## Creating variables in R
@@ -58,25 +80,20 @@ sd(df$numerical_list)
 ```{r}
 sort(df$list_of_strings)
 ```
-## Installing packages in r
+#### Referencing documentation about functions
 
-Installation of R Packages takes place within R using R scripts. The syntax for installing packages is as follows:
+The help() fucntion and the ? help operator in R provide access to R documentation. 
 
-  install.packages("package_name")
-
-Packages are installed once per the computer you are using, though if you need to update a package, you would want to rerun install.packages().
-
-After packages are installed (once per machine), packages need to be loaded into your project everytime a project's global environment has been reset. Packages are loaded using the library function:
-
-  library(package_name)
+Referencing documentation for the c list creating function:
 
 ```{r}
-# install and load the seurat package
-install.packages('Seurat')
-library(Seurat)
-
-# install and load the dpylr package
-install.packages("dplyr")
-library(dplyr)
+?c
 ```
+
+Referencing documentation for the averaging function, specifying that you would like the mean function from base R (opposed to another package which might also have a mean function):
+
+```{r}
+?base::mean
+```
+
 ## 
