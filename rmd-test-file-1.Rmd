@@ -54,3 +54,29 @@ mean(df$numerical_list)
 sd(df$numerical_list)
 ```
 
+#### Vector functions in Base R
+```{r}
+sort(df$list_of_strings)
+```
+## Installing packages in r
+
+Installation of R Packages takes place within R using R scripts. The syntax for installing packages is as follows:
+
+  install.packages("package_name")
+
+Packages are installed once per the computer you are using, though if you need to update a package, you would want to rerun install.packages().
+
+After packages are installed (once per machine), packages need to be loaded into your project everytime a project's global environment has been reset. Packages are loaded using the library function:
+
+  library(package_name)
+
+```{r}
+# install and load the seurat package
+install.packages('Seurat')
+library(Seurat)
+
+# install and load the dpylr package
+install.packages("dplyr")
+library(dplyr)
+```
+## 
