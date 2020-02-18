@@ -40,12 +40,12 @@ list_of_strings
 
 Load a sample dataset from the CRAN (VADeaths).
 
-```{r pressure, echo=FALSE}
+```{r}
 data("VADeaths")
 ```
 
 View a summary of this dataframe
-```{r pressure, echo=FALSE}
+```{r}
 summary(VADeaths)
 ```
 
