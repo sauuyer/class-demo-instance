@@ -21,6 +21,8 @@ Variables in R are created using the following notation: <-
 ```{r}
 x <- 1
 x
+y <- "single string"
+y
 ```
 
 
@@ -45,6 +47,11 @@ data("VADeaths")
 View a summary of this dataframe
 ```{r pressure, echo=FALSE}
 summary(VADeaths)
+```
+
+View a preview of this dataset using the head() function.
+```{r}
+head(VADeaths)
 ```
 
 View a subset of this data. How would we include only ages 50 to 64 for Urban Females?
@@ -112,4 +119,43 @@ dplyr is a grammar of data manipulation, providing a consistent set of verbs tha
 * summarise() reduces multiple values down to a single summary.
 * arrange() changes the ordering of the rows.
 
+```{r}
+library(dplyr)
+```
+
 #### Group-by and Summary
+
+Load in another sample dataset.
+
+```{r}
+data("ToothGrowth")
+```
+
+```{r}
+head(ToothGrowth)
+```
+
+Group by suppliment type (OJ or VC) and find the average length for each group. 
+
+```{r}
+ToothGrowth %>% 
+    group_by(supp) %>%
+    summarize(count = n())
+```
+
+Add more features by which to summarize
+
+```{r}
+ToothGrowth %>% 
+    group_by(supp) %>%
+    summarize(lenmean=mean(len), lensd=sd(len), count = n())
+```
+
+Group and Summarize by both supplement as well as dose.
+
+```{r}
+ToothGrowth %>% 
+    group_by(supp, dose) %>%
+    summarize(length_mean=mean(len), length_sd=sd(len), count = n())
+```
+
