@@ -4,7 +4,7 @@ navbar:
   title: "title"
   left:
   - text: "Left Welcome!"
-   href: r-basics-seurat.html
+   href: index.html
 output:
   html_document: 
 theme: jekyll-theme-slate
